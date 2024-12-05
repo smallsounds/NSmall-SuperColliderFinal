@@ -190,6 +190,25 @@ I rearranged all the elements I have so far to represent the day I got into a ca
         Out.ar(0, sound);
     }).add;
 
+    ~tbl = IdentityDictionary[
+        $1 -> [[697, 1209]],
+        $2 -> [[770, 1209]],
+        $3 -> [[852, 1209]],
+        $4 -> [[697, 1336]],
+        $5 -> [[770, 1336]],
+        $6 -> [[852, 1336]],
+        $7 -> [[697, 1477]],
+        $8 -> [[770, 1477]],
+        $9 -> [[852, 1477]],
+        $* -> [[697, 1633]],
+        $0 -> [[770, 1633]],
+        $# -> [[852, 1633]],
+        $A -> [[941, 1209]],
+        $B -> [[941, 1336]],
+        $C -> [[941, 1477]],
+        $D -> [[941, 1633]]
+    ];
+
     SynthDef(\dtmf, {|freq=#[770, 1633], out=0, amp=0.2, gate=1|
         var son, env;
         son = SinOsc.ar(freq, 0, amp).sum;
@@ -273,6 +292,7 @@ I rearranged all the elements I have so far to represent the day I got into a ca
     ~seq1.stop;
     ~seq2.stop;
     ~seq3.stop;
+    ~sparkles.stop;
     )
 
 
